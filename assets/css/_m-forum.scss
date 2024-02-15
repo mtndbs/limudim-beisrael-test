@@ -1,0 +1,433 @@
+// forum forms 
+
+.foums-form-tab-cell {
+	padding-#{$left}: runner(7);
+}
+.forums-forms-tabs {
+	height: runner(56);
+}
+.forums-form-search {
+	border-radius: runner($rad);
+	border: 1px solid $c3;
+	height: runner(40);
+	width: runner(285);
+}
+.forums-form-search-field {
+	padding: 0 runner($pad2/2);
+}
+.forums-tab-newMessage {
+	background: $c2;
+}
+.ask-experts-label {
+	white-space: nowrap;
+}
+.ask-experts-field {
+	height:1.1em;
+	padding: 0 runner($pad2/2);
+	@include placeholder_it(#939598);
+}
+.ask-experts-textarea {
+	height: 100%;
+}
+.froums-form-tab {
+	&.is-active {
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+		box-shadow: none;
+		+ .inactive-pad {
+			display: none;
+		}
+	}
+}
+.inactive-pad {
+	height: runner(7);
+}
+
+.pagination-panel {
+	@extend %t-bg;
+}
+.pagination-side {
+	@include width(em($fs-small,120));
+}
+.pagination-arrow {
+	@extend %t-hover;
+	&.is-prev {
+		margin-#{$left}: runner(20);
+	}
+	&.is-next {
+		margin-#{$right}: runner(20);
+	}
+}
+.pagination-link {
+	@extend %t-line-height;
+	@extend %l-center;
+	@extend %norm-a;
+	@extend %t-hover;
+	margin: 0 em($fs-small,10);
+	width: em($fs-small,26);
+	height: em($fs-small,26);
+	border-radius: 2px;
+	&.is-active {
+		background: $c3;
+		color: #fff;
+	}
+}
+
+.forums-form-h {
+	border: 1px solid $c3;
+	padding: runner($pad/2) runner($pad/2) runner($pad2);
+	border-radius: runner($rad);
+	border-top-#{$right}-radius: 0;	
+}
+.ask-experts-userInfo {
+	width: runner(390);
+}
+
+.form-service-h {
+	background-color: $c-bg-yellow;
+	border-color: $c-bor-gold;
+	padding-bottom: runner(42);
+	.submit-hold {
+		padding: .6em 1.27em;
+	}
+}
+.fsc-short {
+	@include width(runner(160));
+}
+input.t-box-w {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+// forum item 
+
+.forum-item {
+	@include transition( background-color 400ms ease-out );
+	.t-sep {
+		margin: 0 runner($pad/2);
+	}
+	.t-box-pad {
+		padding: runner(20) runner(15);
+	}
+	&.is-active {
+		background-color: $c-bg-2;
+	}
+}
+.forum-cell {
+	@extend %l-flex;
+	@extend %f-c;
+}
+.forum-item-icon {
+	font: inherit;
+	color: #fff;
+	background: #d5dadf;
+	font-size: runner(30);
+	font-weight: $fw-medium;
+	@include width( em(30,50) );
+	height: em(30,50);
+	border-radius: 50%;
+	padding-top: .01em;
+}
+.forum-commentsCount {
+	padding: em($fs-small,4) em($fs-small,16);
+	border-radius: 2px;
+	background-color: #fff;
+	.top-tip {
+		bottom: auto;
+		top: calc(100% - .001em);
+	}
+}
+.forum-user {
+	@include width (runner(105)) ;
+	+ .t-sep {
+		margin-#{$right} : 0;
+	}
+}
+.forum-panel {
+	border-top: 1px solid $c-bor;
+}
+.forum-comment-desc {
+	min-height: runner(72);
+}
+.forum-item-form-h {
+	padding: runner(30) runner(21);
+	.t-field {
+		height: 100%;
+	}
+	.t-btn {
+		padding: .56em 1.27em .6em 
+	}
+}
+.forum-item-form-title {
+	@include width(em($fs-medium,170));
+}
+.forum-item-form-cell {
+	@include width(runner(150));
+}
+.btn-forum {
+	background: linear-gradient(to bottom, #cdd2d6 0%, #b8bec4 100%);
+	font-size: inherit;
+	padding: .76em 1.27em;
+	height: auto;
+}
+.btn-forum-addComment {
+	background: #fff;
+	border: 1px solid;
+	color: $c3;
+	box-shadow: none;
+	&:hover {
+		background:rgba($c-bg,.5);
+		color: $c3;
+	}
+}
+
+@media print {
+	.forum-item-form-h,
+	.forum-item-controls {
+		display: none;
+	}
+	.forum-panel {
+		color: #000;
+		* {
+			color: #000;
+		}
+	}
+	.forum-item-icon {
+		color: #000;
+		border: 1px solid;
+	}
+}
+
+.close-forum-search {
+	width: runnerMobile(70);
+	border-#{$left}: 1px solid $c3;
+	&:before, &:after {
+		content:"";
+		@extend %l-abs-center;
+		background: $c2;
+		@include transform(rotate(45deg));
+	}
+	&:before {
+		width: 2px;
+		height: runnerMobile(20);
+	}
+	&:after {
+		height: 2px;
+		width: runnerMobile(20);
+	}
+}
+.add-comment {
+	display: none;
+	border: 1px solid $c3;
+	border-radius: runner($rad);
+	margin-top: runner($pad);
+	.top-tip {
+		fill: $c-bg-2;
+		stroke: $c3;
+		z-index: 1;
+		#{$right}: auto;
+		margin-#{$right}: runner(-22);
+	}
+	&:after {
+		content:"";
+		@extend %l-spread;
+		background: $c-bg-2;
+		border-radius: runner($rad);
+		z-index: 2;
+	}
+	.ask-experts-form {
+		@extend %l-layer-up;
+	}
+}
+
+@media (max-width: $mobile){
+
+	$forums-tabs-dim : 65;
+	
+	.forums-form-search
+	{
+		height: runnerMobile($forums-tabs-dim);
+	}
+	.forums-forms-tabs {
+		height: runnerMobile( 65 + 12 );
+	}
+	.forums-forms-tabs {
+		width: 100%;
+	}
+	.froums-form-tab {
+		font-size: runnerMobile(30);
+		margin: 0;
+		padding:em(30,5) em(30,22);
+	}
+	.toggle-forum-header-h {
+		@include l-fg1();
+		width: 0;
+	}
+	.toggle-forum-header {
+		border-radius: runnerMobile($rad);
+		width: runnerMobile($forums-tabs-dim);
+		margin: 0;
+		margin-#{$right}: auto;
+		> .l-flex {
+			@include f-jc();
+		}
+		.l-fg1 {
+			display: none;
+		}
+	}
+
+	.forums-form-h {
+		padding: runnerMobile(35) runnerMobile(19);
+	}
+	.forums-form-search-h {
+		width: 100%;
+		display: block;
+	}
+	.forums-form-search {
+		width: 100%;
+		box-shadow: $shadow-props;
+	}
+	.ask-experts-fieldset {
+		display: block;
+		.l-fg1-w0 {
+			width: auto;
+		}
+		.l-fg1-h0 {
+			height: auto;
+		}
+	}
+	.ask-experts-userInfo {
+		width: auto;
+	}
+	.ask-experts-submit {
+		width: em($fs-btn-mobile, 200);
+		min-width: 0;
+		margin: 0;
+	}
+
+	.forum-item .t-box-pad {
+		padding: runnerMobile($pad/2) runnerMobile($pad/2) 0 ;
+	}
+	.forum-item-top {
+		@include f-w();
+
+	}
+	.forum-cell {
+		margin-bottom: runnerMobile(20);
+	}
+	.forum-cell--wide {
+		width: calc( 100% - #{runnerMobile( 170 )});
+		flex-grow: unset;
+		padding-left: runnerMobile(20);
+		border-#{$left}: 1px solid $c-bor;
+	}
+	.forum-cell--thin {
+		width: runnerMobile( 170 );
+		padding-right: runnerMobile(20);
+		
+	}
+	.forum-date,
+	.mobile-forum-item-top-sep,
+	.forum-cell--wide:first-child {
+		order: -1;
+	}
+
+	.mobile-forum-item-top-sep {
+		width: calc( 100% + #{runnerMobile($pad)});
+		min-height: 1px;
+		background: $c-bor;
+		margin: 0 runnerMobile(-$pad/2) runnerMobile(20);
+	}
+	.forum-comment {
+		display: block;
+	}
+	.forum-comment-desc {
+		margin-top: runnerMobile($pad/2);
+		.top-tip {
+			#{$left}: auto;
+			#{$right}: 3.6em;
+		}
+	}
+	.forum-item-controls {
+		padding-bottom: runnerMobile( $pad );
+	}
+
+	.btn-forum {
+		margin: 0;
+		margin-#{$left}: runnerMobile(12);
+	}
+	.forum-item-form-title {
+		margin: 0 0 em($fs-large-mobile,10);
+	}
+
+	.forum-item-form-h,
+	.forum-item-form {
+		display: block;
+	}
+	.forum-item-form-title,
+	.forum-item-form-cell {
+		width: auto;
+		min-width: 0;
+		margin: 0;
+		br {
+			display: none;
+		}
+	}
+	.forum-item-form-h {
+		padding-top: runnerMobile(20);
+
+		.t-field {
+			height: runnerMobile(80);
+		}
+		.form-strip-checkbox {
+			position: static;
+		}
+		.t-btn {
+			display: table;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.forum-item-form-title {
+			margin-bottom: em($fs-medium, 15);
+		}
+	}
+
+	.pagination-panel {
+		display: block;
+		overflow: hidden;
+	}
+	.pagination-side {
+		width: auto;
+		min-width: auto;
+		margin: 0 em($fs-small-mobile, -$pad) em($fs-small-mobile, $pad/2);
+		border-bottom: 1px solid $c-bor;
+		padding-bottom: em($fs-small-mobile,$pad/2);
+		text-align: center;
+	}
+	.pagination-nav {
+		font-size: .65em;
+	}
+	.form-service {
+		display: block;
+		.fsc-short {
+			width: 100%;
+		}
+	}
+	.form-service-field {
+		height: em($fs-small-mobile, 62);
+	}
+	.form-strip-checkbox {
+		position: relative;
+	}
+	.form-service-cell {
+		width: 100%;
+		text-align: center;
+	}
+	.add-comment {
+		margin-top: runnerMobile($pad2/2);
+		margin-bottom: runnerMobile($pad2);
+		&.t-box-pad {
+			padding-bottom: runnerMobile($pad2);
+		}
+	}
+
+}

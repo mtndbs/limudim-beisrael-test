@@ -1,0 +1,105 @@
+
+
+// colors 
+$c1					    : #8dba06;
+$c2					    : #216396;
+$c3					    : #17507c;
+$c2-dark			  : #093558;
+$c-dark 			  : #0e283c;
+$c-bg				    : #eff2f5;
+$c-bg-2         : #eff2f5;
+$c-bg-dark   		: #111a21;
+$c-greyt			  : #595959;
+$c-bor				  : #dfe2e5;
+$c-bor-op			  : rgba(#fff,0.3);
+$c-red 				  : #d11800;
+$c-yellow			  : #e0cb86;
+$c-yellow-b			: #ecdfb6;
+$c-bor-gold			: #cbca82;
+$c-bg-yellow 		: #f9f8a6; 
+
+
+// responsive 
+$fold-1             : 1700px;
+$tablet 				    : 1000px;
+$mobile 				    : 750px;
+$mobile-smallest		: 450px;
+$menu-width 			  : 300;
+
+// measures
+$pad 				    : 40px;
+$pad2					  : 30px;
+$pad-box				: 18px;
+$pad-part		    : 80px;
+$pad-small      : 10px;
+$grid 				  : 1095px;
+$grid-header		: 1200px;
+$opacity			  : 0.85;
+$rad 					  : 5px;
+
+
+$height-field			: 37px;
+$dim-header-btn  	: 42px;
+$dim-counter			: 48px;
+
+$width-form				  : 462px;
+$width-btn-scroll		: 41px;
+$width-logo-mobile 	: 237px; 
+$width-extra-menu		: 250px;
+$width-logo				  : 196px;
+$pad-top-item			  : 22px;
+$grid-pad-mobile		: 43px;
+
+// font
+$font_name : Heebo;
+$weights_list : (
+  Black : 100,
+  Bold : 200,
+  ExtraBold : 300,
+  Light : 400,
+  Medium : 500,
+  Regular : 600,
+  Thin : 700
+);
+
+// font weights
+$fw-semi_bold :    map-get($weights_list,SemiBold);
+$fw-light :        map-get($weights_list,Light);
+$fw-regular :      map-get($weights_list,Regular);
+$fw-medium :       map-get($weights_list,Medium); 
+$fw-bold :         map-get($weights_list,Bold);
+$fw-extra_bold :   map-get($weights_list,ExtraBold);
+$fw-black :        map-get($weights_list,Black);
+
+// font sizes - desdtop
+$runner    			  	: 18px;
+$fs-h1				      : 55px;
+$fs-h2				      : 32px;
+$fs-h3				      : 26px;
+$fs-menu			      : 20px;
+$fs-btn				      : 18px;
+$fs-large			      : 25px;
+$fs-medium			  	: 20px;
+$fs-small			      : 15px;
+$fs-smallest		  	: 13px;
+$fs-btn-arrow     	: 37px;
+
+// font sizes - mobile
+$runner-mobile			: 32px;
+
+$fs-btn-mobile     : 38px;
+$fs-small-mobile   : 25px;
+$fs-large-mobile   : 32px;
+$fs-h2-mobile		  	: 47px;
+
+
+$icons-path 	: '../../assets/icons/';
+$bg-path 		: '../../assets/images/bg/';
+$shadow : 0px 0px 5px 0px rgba(#000,0.2);
+
+@function runner($fs){
+	@return em($runner, $fs);
+}
+@function runnerMobile($fs){
+	@return em($runner-mobile, $fs);
+}

@@ -1,0 +1,60 @@
+@function left(){
+	@if($dir == 'ltr'){
+		@return right;
+	}
+	@else {
+		@return left;
+	}
+}
+@function right(){
+	@if($dir == 'ltr'){
+		@return left;
+	} 
+	@else {
+		@return right;
+	}
+
+}
+@function rtl(){
+	
+	@if($dir == 'rtl'){
+		@return rtl;
+	} 
+	@else {
+		@return ltr;
+	}
+	
+}
+@function ltr(){
+	
+	@if($dir == 'ltr'){
+		@return ltr;
+	} 
+	@else {
+		@return ltr;
+	}
+	
+}
+@function point_left(){
+	@if($dir == 'ltr'){
+		@return -135;
+	} 
+	@else {
+		@return 45;
+	}
+}
+@function point_right(){
+	@if($dir == 'ltr'){
+		@return 45;
+	} 
+	@else {
+		@return -135;
+	}	
+}
+
+$right : right();
+$left : left();
+$rtl : rtl();
+$ltr : ltr();
+$point-right : point_right();
+$point-left : point_left();

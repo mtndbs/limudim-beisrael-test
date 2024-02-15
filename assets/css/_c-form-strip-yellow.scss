@@ -1,0 +1,117 @@
+.c-form-strip-yellow {
+	background-color: $c-bg-yellow;
+	.form-strip-yellow-formHold {
+		background-color: #eae9ad;
+	}
+}
+$form-kusit-width: 170;
+.form-strip-yellow-formCell {
+	position: relative;
+	padding-#{$left}: runner($form-kusit-width - 18);
+	&:after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		content: "";
+		height: runner(369);
+		width: runner($form-kusit-width);
+		background: url(#{$bg-path}yellow-form-pres.webp) no-repeat $left center;
+		background-size: runner($form-kusit-width);
+		#{$left}: 0;
+		#{$right}: auto;
+		z-index: 9;
+	}
+}
+.form-strip-yellow-formHold {
+	@extend %t-shadow-small;
+	padding: runner($pad/2) runner($pad/2) runner($pad/2 + 5);
+	border: 1px solid $c-bor-gold;
+	border-radius: runner($rad);
+	background-color: $c-bg-yellow;
+	width: runner(352);
+	.form-strip-checkbox {
+		position: static;
+		margin: 0 0 runner(17);
+		display: block;
+	}
+	.t-btn {
+		width: auto;
+		min-width: em($fs-btn, 173);
+	}
+	.t-field {
+		height: runner(53);
+		border: 1px solid $c-bor-gold;
+	}
+	&.w100 {
+		width: 100%;
+	}
+}
+
+.form-strip-yellow-sep {
+	@include width(runner(85));
+	.icon-form-sep {
+		position: relative;
+		#{$left}: runner(-12);
+	}
+	polygon {
+		fill: $c-bor-gold !important;
+	}
+}
+.form-strip-yellow-title {
+	margin: 0 0 em($fs-h2, 15);
+}
+.form-strip-yellow-subTitle {
+	font-size: runner(25);
+	margin: 0 0 em(25, 15);
+}
+
+@media (max-width: $mobile) {
+	.form-strip-yellow-table {
+		@include l-column();
+		.icon-form-sep-mobile {
+			margin: runnerMobile(60) 0 runnerMobile(48);
+		}
+	}
+	.form-strip-yellow-sep {
+		@include order(4000);
+	}
+	.form-strip-yellow-formCell {
+		@include order(5000);
+		padding-#{$left}: 0;
+		&:after {
+			width: runnerMobile(220);
+			background-size: 100%;
+			#{$left}: runnerMobile(-33);
+		}
+	}
+	.form-strip-yellow-sep,
+	.form-strip-yellow-text {
+		width: 100%;
+	}
+	.form-strip-yellow-title {
+		font-size: runnerMobile(47);
+		margin: 0 0 em(47, 26);
+	}
+	.form-strip-yellow-subTitle {
+		font-size: runnerMobile(35);
+		margin: 0 0 em(35, 26);
+	}
+	.form-strip-yellow-formHold {
+		width: runnerMobile(502);
+	}
+	.form-strip-yellow-formHold .t-field {
+		height: em(28, 77);
+	}
+	.form-strip-yellow-formHold {
+		.form-strip-checkbox {
+			margin: 0;
+			text-align: $right;
+		}
+	}
+	.t-checkbox span {
+		font-size: runnerMobile(20);
+	}
+	.form-strip-yellow-formHold .t-btn {
+		min-width: em(38, 300);
+	}
+}

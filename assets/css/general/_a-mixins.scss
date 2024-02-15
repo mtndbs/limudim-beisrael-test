@@ -1,0 +1,437 @@
+
+@mixin l-flex(){
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+@mixin l-fg1(){
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;	
+}
+@mixin l-f1(){
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;	
+}
+@mixin f-w(){
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;	
+}
+@mixin f-c(){
+	-webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;	
+}
+@mixin f-b(){
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;	
+}
+@mixin f-t(){
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;	
+	-webkit-align-items: start;
+}
+@mixin f-jc(){
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+	-webkit-justify-content: center;
+    justify-content: center;
+}
+@mixin f-jl(){
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+@mixin f-jr() {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+@mixin f-jb() {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+@mixin l-column(){
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;	
+}
+@mixin l-shrink(){
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+@mixin touch() {  -webkit-overflow-scrolling: touch;}
+
+@mixin rot($ang){
+    transform: rotate($ang+deg);
+    -webkit-transform: rotate($ang+deg);
+    -o-transform: rotate($ang+deg);
+    -ms-transform: rotate($ang+deg);
+    -moz-transform: rotate($ang+deg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+@mixin ani($effect,$time,$ease : linear){
+    -webkit-transition:$effect $time+ms $ease;
+    -o-transition:$effect $time+ms $ease;
+    -moz-transition:$effect $time+ms $ease;
+    transition:$effect $time+ms $ease;
+}
+@mixin mag_glass($top: 6px,$right:7px,$color:$grey,$size:28px) {
+    position: relative;
+    width: $size;
+    height:$size;    
+    
+    &:before,&:after {
+        content:"";position:absolute;border:2px solid $color;
+    }
+    &:before {
+       width:9px;height:9px;border-radius:50%;top:$top;right:$right;
+    }
+    &:after {
+       height:4px;width:0px;border:none;border:1px solid $color;
+        @include rot(-45);border-radius:2px;top:$top+9px;right:$right - 1px;
+    }
+    &:hover {opacity:0.7;}
+}
+@mixin l-unshrink(){
+	flex-shrink: 0;
+}
+
+
+@mixin scale($x){
+	transform:scale($x,$x);
+	-o-transform:scale($x,$x);
+	-webkit-transform:scale($x,$x);
+	-ms-transform:scale($x,$x);
+	-moz-transform:scale($x,$x);	
+}
+@mixin order($v){
+    -webkit-box-ordinal-group: $v + 1;
+    -ms-flex-order: $v;
+    order: $v;
+}
+@mixin placeholder($color){
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color:    $color;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    $color;
+        opacity:  1;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    $color;
+        opacity:  1;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+        color:    $color;
+    }
+}
+@mixin placeholder_it($color){
+    &::-webkit-input-placeholder { /* WebKit browsers */
+        color:    $color;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    $color;
+        opacity:  1;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    $color;
+        opacity:  1;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color:    $color;
+    }
+}
+@mixin grad($start,$end,$start_opacity:1,$end_opacity:1,$image:false){
+     background-image: $start;
+     @if($image){
+        background-image : url($image), -moz-linear-gradient(top,  rgba($start,$start_opacity) 0%, rgba($end,$end_opacity) 100%);
+        background-image: url($image), -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($start,1)), color-stop(100%,rgba($end,$end_opacity)));
+        background-image: url($image), -webkit-linear-gradient(top,  rgba($start,$start_opacity) 0%,rgba($end,$end_opacity) 100%);
+        background-image: url($image), -o-linear-gradient(top,  rgba($start,$start_opacity) 0%,rgba($end,$end_opacity) 100%);
+        background-image: url($image), -ms-linear-gradient(top,  rgba($start,$start_opacity) 0%,rgba($end,$end_opacity) 100%);
+        background-image: url($image), linear-gradient(to bottom,  rgba($start,$start_opacity) 0%,rgba($end,$end_opacity) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 );
+     } @else {
+        background-image : -moz-linear-gradient(top,  rgba($start,$start_opacity) 0%, rgba($end,$end_opacity) 100%);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($start,1)), color-stop(100%,rgba($end,$end_opacity)));
+        background-image: -webkit-linear-gradient(top,  rgba($start,$start_opacity) 0%,rgba($end,$end_opacity) 100%);
+        background-image: -o-linear-gradient(top,  rgba($start,$start_opacity) 0%,rgba($end,$end_opacity) 100%);
+        background-image: -ms-linear-gradient(top,  rgba($start,$start_opacity) 0%,rgba($end,$end_opacity) 100%);
+        background-image: linear-gradient(to bottom,  rgba($start,$start_opacity) 0%,rgba($end,$end_opacity) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 );         
+     }
+    
+    filter:none;
+    
+}
+@mixin pxpt($insert_pt){
+    font-size:round($insert_pt * 1.33333) + px;
+}
+@mixin transition($prop){
+	transition: $prop;
+	-webkit-transition : $prop;
+}
+@mixin transform($prop){
+	transform: $prop;
+	-webkit-transform : $prop;
+}
+
+@mixin columns($c, $gap){
+    -webkit-column-count: $c;
+    -moz-column-count: $c;
+    column-count: $c;
+    -webkit-column-gap: $gap;
+    -moz-column-gap: $gap;
+    column-gap: $gap;
+    > * {
+        break-inside: avoid-column;
+        -webkit-column-break-inside: avoid;
+    }
+}
+
+%clear {
+    &:after {
+        content:"";display: block;clear:both;
+    }
+}
+
+%tac {
+	text-align: center;
+}
+%icon {
+	background-repeat: no-repeat;
+	background-size:100% auto;
+	background-position: center center;
+}
+%flex {
+	display: flex;
+}
+%fww {
+	@extend %flex;
+	flex-wrap: wrap;
+}
+%ali-c {
+	align-items: center;
+}
+%ali-b {
+	align-items: flex-end;
+}
+%ali-t {
+	align-items: flex-start;
+}
+%fg1 {
+	flex-grow: 1;
+}
+%td {
+	display: table-cell;
+}
+%jc-c {
+	justify-content: center;
+}
+%jc-spacebetween {
+	justify-content: space-between;
+}
+
+%svg_width {
+	img {
+		max-width:100%;
+		height: auto;
+	}
+	.fuie & {
+		img[src$="svg"] {
+			width:100%;
+		}
+		img[src$="jpg"],img[src$="png"],img[src$="gif"] {
+			max-width:100%;
+		}
+	}
+}
+.obscure ,%obscure{
+	position:absolute;right:0;top:0;overflow:hidden;height:0;width:0;
+}
+%stretch{
+    position: absolute;top:0;right:0;width:100%;height:100%;
+}
+%spread {
+    position: absolute;
+    top:-99px;
+    bottom:-99px;
+    right:-99px;
+    left:-99px;
+    margin:auto;
+}
+%grid {
+    max-width:980px;
+    margin:0 auto;
+    @media screen and (max-width:1040px){
+        margin:0 1rem;
+    }
+}
+%ul, .ul-norm {padding:0;margin:0;list-style: none;}
+%a, .a-norm {
+    color:inherit;
+    text-decoration:none;
+}
+%type {
+    line-height: .9em;letter-spacing: -.01em;
+}
+%vit {vertical-align: top;}
+%vim {vertical-align: middle;}
+%vib {vertical-align: bottom;}
+%hov {
+    &:hover {
+        opacity: 0.7;
+    }
+}
+%radfix {
+    -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+
+}
+%norm-a {
+	text-decoration: none;
+	color:inherit;
+}
+%icon {
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:100% auto;
+}
+@mixin width ( $w ) {
+    width: $w;
+    min-width : $w;
+}
+@mixin spin( $speed:1s){ 
+		
+        -webkit-animation:spin $speed linear infinite;
+        animation:spin $speed linear infinite;		
+		
+		@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+		@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+}
+@mixin flip(){
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";	
+    
+}
+%slider {
+    .viewport {overflow: hidden;}
+    .slide {
+        position: relative;display: inline-block;
+       
+        &:first-of-type {
+            visibility: visible;
+        }
+    }
+    .holdimg {
+        position: relative;
+    }
+}
+
+// _decimal.scss | MIT License | gist.github.com/terkel/4373420
+
+// Round a number to specified digits.
+//
+// @param  {Number} $number A number to round
+// @param  {Number} [$digits:0] Digits to output
+// @param  {String} [$mode:round] (round|ceil|floor) How to round a number
+// @return {Number} A rounded number
+// @example
+//     decimal-round(0.333)    => 0
+//     decimal-round(0.333, 1) => 0.3
+//     decimal-round(0.333, 2) => 0.33
+//     decimal-round(0.666)    => 1
+//     decimal-round(0.666, 1) => 0.7
+//     decimal-round(0.666, 2) => 0.67
+//
+@function decimal-round ($number, $digits: 0, $mode: round) {
+    $n: 1;
+    // $number must be a number
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    // $digits must be a unitless number
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+    @if $mode == round {
+        @return round($number * $n) / $n;
+    } @else if $mode == ceil {
+        @return ceil($number * $n) / $n;
+    } @else if $mode == floor {
+        @return floor($number * $n) / $n;
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+
+// Ceil a number to specified digits.
+//
+// @param  {Number} $number A number to round
+// @param  {Number} [$digits:0] Digits to output
+// @return {Number} A ceiled number
+// @example
+//     decimal-ceil(0.333)    => 1
+//     decimal-ceil(0.333, 1) => 0.4
+//     decimal-ceil(0.333, 2) => 0.34
+//     decimal-ceil(0.666)    => 1
+//     decimal-ceil(0.666, 1) => 0.7
+//     decimal-ceil(0.666, 2) => 0.67
+//
+@function decimal-ceil ($number, $digits: 0) {
+    @return decimal-round($number, $digits, ceil);
+}
+
+// Floor a number to specified digits.
+//
+// @param  {Number} $number A number to round
+// @param  {Number} [$digits:0] Digits to output
+// @return {Number} A floored number
+// @example
+//     decimal-floor(0.333)    => 0
+//     decimal-floor(0.333, 1) => 0.3
+//     decimal-floor(0.333, 2) => 0.33
+//     decimal-floor(0.666)    => 0
+//     decimal-floor(0.666, 1) => 0.6
+//     decimal-floor(0.666, 2) => 0.66
+//
+@function decimal-floor ($number, $digits: 0) {
+    @return decimal-round($number, $digits, floor);
+}
+@function strip($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+/*px to em: first param = parent font-size, second param = unit in pixels to be converted 
+to em */
+@function em($p,$v){
+	@return decimal-floor( ((strip($v) / strip($p)) * 1em) ,2 );
+} 
+@function rem($fs,$rem:30){
+	@return decimal-floor((strip($fs)/$rem*1rem),2);
+}

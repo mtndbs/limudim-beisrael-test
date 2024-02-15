@@ -1,0 +1,182 @@
+form {
+	position: relative;
+}
+.form-error-container {
+	background: rgba(152,0,0,1);
+	border:1px rgba(200,50,50,1) solid;
+	padding: rem(10px) rem(10px) rem(10px);
+	max-width: $grid;
+	margin: runner(30) auto 0;
+	font-size: .9em;
+	color: #fff;
+	line-height: 1.2;
+	text-align: center;
+	position: absolute;
+	top:auto;
+	left:0;
+	right:0;
+	top:100%;
+	.sidebar-widget &
+	{
+		.comma
+		{
+			display: block;
+			font-size: 0;
+		}
+	}
+	.register-form & {
+		position: absolute;
+		top:100%;
+	}
+}
+
+.form-status {
+	background: rgba(152,0,0,1);
+	border:1px rgba(200,50,50,1) solid;
+	padding: 12px 10px 10px;
+	text-align: center;
+	width:100%;
+	max-width: $grid;
+	display: none;
+}
+.sidebar_part .form-error-container{
+	// background: rgba(255,0,0,0.4);
+	background: rgba(152,0,0,1);
+	border:1px rgba(200,50,50,1) solid;
+	color:#ffffff;
+}
+.sidebar_part .form-error-container span.comma{
+    font-size:0;
+    display:block;
+}
+@media (max-width:490px){
+	.wpseo-score-icon {
+		display: none !important;
+	}
+}
+/*
+Gradient Spinner
+*/
+.submit_look.loading
+{
+	background-image:
+		-webkit-linear-gradient(
+		-45deg,
+		rgba(255,255,255,.2) 25%,
+		transparent 25%,
+		transparent 50%,
+		rgba(255,255,255,.2) 50%,
+		rgba(255,255,255,.2) 75%,
+		transparent 75%,
+		transparent
+	);
+	background-image:
+		-moz-linear-gradient(
+		-45deg,
+		rgba(255,255,255,.2) 25%,
+		transparent 25%,
+		transparent 50%,
+		rgba(255,255,255,.2) 50%,
+		rgba(255,255,255,.2) 75%,
+		transparent 75%,
+		transparent
+	);
+	background-image:
+		-ms-linear-gradient(
+		-45deg,
+		rgba(255,255,255,.2) 25%,
+		transparent 25%,
+		transparent 50%,
+		rgba(255,255,255,.2) 50%,
+		rgba(255,255,255,.2) 75%,
+		transparent 75%,
+		transparent
+	);
+	background-image:
+		linear-gradient(
+		-45deg,
+		rgba(255,255,255,.2) 25%,
+		transparent 25%,
+		transparent 50%,
+		rgba(255,255,255,.2) 50%,
+		rgba(255,255,255,.2) 75%,
+		transparent 75%,
+		transparent
+	);
+
+	background-size:50px 50px;
+
+	-webkit-animation:move 2s linear infinite;
+	-moz-animation:move 2s linear infinite;
+	-ms-animation:move 2s linear infinite;
+	animation:move 2s linear infinite;
+
+	-webkit-box-shadow:inset 0 10px 0 rgba(255,255,255,.2);
+	-moz-box-shadow:inset 0 10px 0 rgba(255,255,255,.2);
+	-ms-box-shadow:inset 0 10px 0 rgba(255,255,255,.2);
+	box-shadow:inset 0 10px 0 rgba(255,255,255,.2);
+
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+}	
+
+@-webkit-keyframes move{
+	0% {background-position: 0 0;}
+	100% {background-position: 50px 50px;}
+}	
+@-moz-keyframes move{
+	0% {background-position: 0 0;}
+	100% {background-position: 50px 50px;}
+
+}	
+@-ms-keyframes move{
+	0% {background-position: 0 0;}
+	100% {background-position: 50px 50px;}
+
+}	
+@keyframes move{
+	0% {background-position: 0 0;}
+	100% {background-position: 50px 50px;}
+}
+
+
+	
+.search-highlight{
+    background-color:rgba(255,255,0,0.5); 
+}
+
+@media (max-width:1000px){
+    .sub-menu > .menu-item.menu-item-has-children > a:after{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px){
+#wpadminbar {
+    position: fixed;
+}
+}
+
+.sitemap {
+	padding:0 0 2rem;
+	ul {
+		
+	}
+	li {
+		color: $c1;
+		margin:0 0 4px;
+		a {
+			color: $c2;
+			text-decoration: none;
+			&:hover {
+				color: $c1;
+			}
+		}
+	}
+
+}
+
+.form-status.show{
+    display: block;
+    color: #fff;
+}

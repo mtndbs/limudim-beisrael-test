@@ -1,0 +1,66 @@
+.survey-more-item {
+	padding: 0 runner($pad/2);
+}
+.survey-more-item-chart {
+	$w : 220;
+	margin: 0 auto;
+	.slice-title-frame {
+		width: runner(80);
+	}
+	.js-pie-label {
+		width: runner(90);
+		padding: runner(10); 
+	}
+	.js-pie-label-title {
+		font-size: runner(12);
+	}
+	&.js-pie {
+		.svg-holder {
+			width: runner(200);
+			height: runner(200);
+			margin: 0 auto;
+		}
+		.svgRotator {
+			transform: rotate(-90deg);
+		}
+		svg {
+			width: 100%;
+			height: 100%;		
+		}
+		path {
+			stroke: #fff;
+			stroke-width: 0.02;
+		}
+		.pie-chart-text {
+			z-index: 9;
+			line-height: .9em;
+			color: #fff;
+			padding: 1%;
+			text-shadow: 0 0 2px rgba(#000,0.8);
+		}
+		.slice-title {
+			font-size: runner(12);
+			margin: 0 0 em(12,3);
+			line-height: 1;
+		} 
+	}
+
+
+}
+	.is-label-external {
+		.slice-title-frame {
+			display: none;
+			background: #fff;
+			padding: runner(9);
+			color: #000;
+			border-radius: runner($rad);
+			@extend %t-shadow-small;
+			border: 1px solid $c-bor;
+			text-shadow: none;
+		}
+		&:hover {
+			.slice-title-frame {
+				display: block;
+			}
+		}
+	}

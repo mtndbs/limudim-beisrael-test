@@ -1,0 +1,43 @@
+.header-about {
+	padding-bottom: runner($pad);
+	.header-internal-bottom {
+		@extend %l-center;
+		@extend %f-w;
+	}
+	.internal-header-share-plugins {
+		position: relative;
+		top: runner(-4);
+		padding: 0;
+	}
+	.header-internal-bottom .icon-form-sep-mobile {
+		display: none;
+	}
+}
+
+.header-about-bottom-sep {
+	.border-y {
+		@extend %f-t;
+	}
+	.cell-1, .cell-3 {
+		@extend %l-fg1-w0;
+		height: 2px;
+		background: $c-bor;
+	}
+	.top-tip {
+		position: static;
+		width: runner(46);
+		height: runner(20);
+		stroke: $c-bor;
+		fill : transparent;
+		stroke-width:  5px;
+	}
+}
+
+@media (max-width: $mobile){
+	.header-about .header-internal-title {
+		text-align: center;
+	}
+	.header-about .header-internal-bottom {
+		display: flex;
+	}
+}

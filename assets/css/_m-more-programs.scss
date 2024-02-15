@@ -1,0 +1,55 @@
+.icon-b-arr {
+	@extend %l-shrink;
+}
+.more-programs-item {
+	.icon-b-arr {
+		position: relative;
+		top: runner(4);
+	}
+}
+
+@media (min-width: $mobile){
+	.schoOpenDays-title {
+		.icon-drop-b {
+			display: none;
+		}
+	}
+	.schoOpenDays-list {
+		display: block !important;
+	}
+}
+
+@media (max-width: $mobile){
+	.programs-table {
+		display: block;
+	}
+	.programs-table-cell {
+		width: auto;
+	}
+	.more-programs-list .more-programs-item {
+		border-bottom: 1px solid $c-bor;
+	}
+
+	.schoOpenDays-list {
+		display: none;
+	}
+	.schoOpenDays-title {
+		font-weight: $fw-regular;
+		margin-bottom: em($fs-h2-mobile, 25);
+		.icon-drop-b {
+			@include order(3000);
+			@include transition(transform 400ms ease-out);
+			margin-#{$left}: 0;
+			margin-#{$right}: runnerMobile(10);
+		}
+		&.is-active {
+			.icon-drop-b {
+				@include transform(rotate(180deg));
+			}
+		}
+	}
+	.schoOpenDays-cell {
+		padding-top: runnerMobile(25);
+		border-bottom: 1px solid $c-bor;
+	}
+}

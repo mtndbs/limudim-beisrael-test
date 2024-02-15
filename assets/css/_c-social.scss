@@ -1,0 +1,77 @@
+.fixed-social {
+	position: fixed;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 999;
+
+	&__link {
+		display: block;
+		border: 0;
+		border-radius: 999px;
+		width: 45px;
+		height: 45px;
+		text-indent: 120%;
+		white-space: nowrap;
+		overflow: hidden;
+		box-shadow: 3px 3px 7px rgba(24,24,24,0.35);
+		
+		@media screen and (max-width: 767px) {
+			position: absolute;
+			right: 0;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+
+		&:not(&--trigger) {
+			@media screen and (max-width: 767px) {
+				opacity: 0;
+				transform: translateX(150%);
+				transition: all 100ms ease-in-out;
+			}
+		}
+
+		&--trigger {
+			background: url(#{$icons-path}/social/share.svg) no-repeat 9px center,#fff;
+			position: relative;
+			z-index: 1;
+
+			@media screen and (min-width: 768px) {
+				display: none;
+			}
+		}
+
+		&--facebook {
+			background: url(#{$icons-path}/social/fb.svg) no-repeat center,#3660a0;
+
+			@media screen and (max-width: 767px) {				
+				top: 53px;
+			}
+		}
+
+		&--whatsapp {
+			background: url(#{$icons-path}/social/wa.svg) no-repeat 10px 9px,#20b12e;
+
+			@media screen and (max-width: 767px) {
+				top: 106px;
+			}
+		}
+
+		&--mail {
+			background: url(#{$icons-path}/social/mail.svg) no-repeat 10px 7px,#eb7d1b;
+
+			@media screen and (max-width: 767px) {
+				top: 159px;
+			}
+		}
+	}
+}
+
+.fixed-social.visible {
+	.fixed-social__link {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

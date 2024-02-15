@@ -1,0 +1,30 @@
+.part-video-frame {
+	padding-top: 62%;
+	border-radius: runner($rad * 2);
+	img {
+		border-radius: runner($rad * 2);
+		max-width: 100%;
+	}
+	.icon-play {
+		z-index: 1;
+		opacity: .9;
+	}
+}
+.video-box {
+	float: $left;
+	width: 47%;
+	margin: 0 0 runner($pad/2);
+	margin-#{$right}: runner($pad);
+}
+
+@media (max-width: $mobile ){
+	.icon-play {
+		width: runnerMobile(88);
+		height: runnerMobile(62);
+	}
+	.video-box {
+		float: none;
+		width: auto;
+		margin: runnerMobile(30) 0;
+	}
+}

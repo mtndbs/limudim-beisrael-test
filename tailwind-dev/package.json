@@ -1,0 +1,17 @@
+{
+  "name": "tailwind-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start":"npx tailwindcss -i ./input.css -o ../public/css/tailwind-output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "tailwindcss": "^3.3.2"
+  }
+}

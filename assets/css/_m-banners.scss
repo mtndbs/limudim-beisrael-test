@@ -1,0 +1,9 @@
+.msl-item {
+	height: runner(274);
+	border: none;
+}
+@media (max-width: $mobile){
+	.might-also-like > .box {
+		width: 100%;
+	}
+}

@@ -1,0 +1,198 @@
+
+.opinions-title {
+	margin: 0 0 em($fs-h2,$pad/2);
+}
+@media (min-width: $mobile){
+	.students-opinion-survey {
+		.opinions-title {
+			min-height: em($fs-h2,60);
+		}
+	}
+}
+.pie-ring {
+	stroke : rgba(#fff,0.2);
+}
+.piechart-theme-law {
+	.pie-slice {
+		stroke : #90bd06;
+	}
+}
+.piechart-theme-business {
+	.pie-slice {
+		stroke : #74c5d6;
+	}
+}
+.piechart-theme-engineering {
+	.pie-slice {
+		stroke : #2d83c6;
+	}
+}
+.js-doughnutChart {
+	svg {
+		width: 100%;
+		height: auto;
+	}
+}
+.opinion-item-top {
+	width: runner(144);
+	margin: 0 auto runner($pad-small);
+}
+.opinion-item {
+	width: 33.3333%;
+}
+.opinion-item.opinion-item {
+	width: 100%;
+}
+.opinion-counter {
+	font-size: runner(46);
+	font-weight: $fw-regular;
+	letter-spacing: -0.02em;
+}
+.opinions-form-cell {
+	margin: 0 0 runner(12+15);
+	position: relative;
+	.t-field {
+		height: runner(40);
+	}
+	.top-search-notice {
+		#{$right} : em(11,5);
+		width: calc( 100% - #{em(11,10)});
+		opacity: .6;
+	}
+}
+.box-opinion-form {
+	padding-#{$left}: runner(126);
+}
+.opinions-desc {
+	font-size: runner(20);
+	margin: 0 0 em(20,10);
+}
+.icon-chat {
+	#{$right} : auto;
+}
+.icon-form-sep-mobile {
+	display: none;
+}
+.icon-form-sep {
+	#{$left}: runner(-11);
+	#{$right} : auto;
+	opacity: 0.5;
+}
+.opinions-bottom {
+	margin: 0 runner(15);
+}
+.survey-value {
+	@extend %t-line-height;
+	font-size: runner(60);
+	font-weight: $fw-regular;
+}
+.survey-symbol-percent {
+	position: relative;
+	top: runner(-5);
+}
+
+// ----- survey ----
+
+.survey-form {
+	max-width: runner(395);
+}
+.survey-option-field {
+	&:checked {
+		+ .survey-question-view {
+			background-color: #fff;
+			color: $c2;
+			.svgIcon {
+				display: block;
+			}
+		}
+	}
+}
+.survey-question-view {
+	padding: runner(8) runner($pad-small);
+	border: 1px solid #fff;
+	border-radius: runner($rad);
+	padding-#{$left}: runner(40);
+	cursor: pointer;
+	position: relative;
+	.svgIcon {
+		@extend %l-abs-center;
+		position: absolute;
+		#{$left}: runner(15);
+		#{$right}: auto;
+		display: none;
+	}
+}
+@media (max-width: $mobile){	
+	.opinions-title {
+		margin: 0 0 em($fs-h2-mobile,$pad/2);
+	}
+	.opinions-table {
+		display: block;
+		.icon-chat {
+			display: none;
+		}
+	}
+	.box-opinion-form {
+		padding: 0;
+	}
+	.opinions-form-cell {
+		margin: 0 0 runnerMobile(40);	
+	}
+	.top-search-notice {
+		font-size: runnerMobile(19);
+	}
+	.opinions-form {
+		.t-btn {
+			margin: 0;
+		}		
+	}
+	.opinions-form-cell {
+		width: 100%;
+		/*
+		&:nth-child(1){
+			width: 13.3em;
+		}
+		*/
+		&:nth-child(2){
+			width: auto;
+		}
+		&.options-form-cell--institute {
+			margin-bottom: .5em;
+		}
+		&.options-form-cell--compare {
+			margin-bottom: .3em;
+		}
+	}
+	.opinions-form-compare {
+		font-size: runnerMobile(28);
+	}
+	.opinion-item-top {
+		width: runnerMobile(206);
+		margin: 0 0 runnerMobile(17);
+	}
+	.opinion-counter {
+		font-size: runnerMobile(66);
+	}
+	.opinion-item-title {
+		font-size: runnerMobile(26);
+	}
+	.opinions-bottom {
+		margin: 0;
+		text-align: inherit;
+	}
+	.icon-form-sep-mobile {
+		display: block;
+		width: runnerMobile(668);
+		height: runnerMobile(26);
+		max-width: 100%;
+		margin-top: runnerMobile(63);
+	}	
+	.icon-form-sep {
+		display: none;
+	}
+
+	.survey-value {
+		font-size: runnerMobile(66);
+	}
+	
+}

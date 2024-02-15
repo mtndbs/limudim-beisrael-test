@@ -1,0 +1,17 @@
+
+
+
+@each $row , $name in $weights_list {
+  @font-face {
+    font-display: swap;
+    font-family: '#{$font_name}';
+    font-style: normal;
+    $weight : $name;
+    font-weight:  $weight;
+    src:  url(./assets/fonts/#{$font_name}/#{$font_name}-#{$row}.eot);
+    src:  url(./assets/fonts/#{$font_name}/#{$font_name}-#{$row}.eot?#iefix) format('embedded-opentype'),
+          url(./assets/fonts/#{$font_name}/#{$font_name}-#{$row}.woff) format('woff'),
+          url(./assets/fonts/#{$font_name}/#{$font_name}-#{$row}.ttf) format('truetype');
+  } 
+}
+

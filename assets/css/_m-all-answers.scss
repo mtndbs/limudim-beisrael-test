@@ -1,0 +1,36 @@
+.all-answers-list {
+	li {
+		position: relative;
+		padding-#{$right}: runner(28);
+		min-height: runner(19);
+		margin: 0 0 runner(10);
+		.svgIcon {
+			position: absolute;
+			top: 0;
+			#{$right}: 0;
+		}
+		a {
+			@extend %norm-a;
+			@extend %t-hover;
+		}
+	}
+}
+
+.all-answers-frame {
+	height: runner(500 - $pad-part);
+	direction: $ltr;
+	img {
+		position: absolute;
+		bottom: 0;	
+		max-width: 100%;
+	}
+}
+
+@media (max-width: $mobile ){
+	.all-answers-frame {
+		height: 7em;
+		img {
+			width: runnerMobile(377);
+		}
+	}
+}

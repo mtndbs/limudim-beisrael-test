@@ -1,0 +1,121 @@
+.intro-title-table {
+	padding: runner($pad) 0;
+	height: runner(423);
+}
+.intro-title {
+	font-size: runner(55);
+	line-height: .8em;
+	margin: 0;
+}
+
+.intro-counters-list {
+	&:before { height : runner(230) }
+}
+.intro-counter-desc {
+	font-size: runner($fs-large);
+	@extend %l-center;
+	@extend %t-arr-left;
+}
+.icon-intro-bg {
+	left: -999px;
+	right: -999px;
+	margin: 0 auto;
+}
+.intro-counter-item {
+	padding: runner(15) runner(37) 0;
+}
+.intro-counter-top {
+	margin:0 0 em($fs-small,6);
+}
+.intro-counter-value {
+	font-size: runner(44);
+	line-height: .8;
+	letter-spacing: -0.02em;
+}
+
+.intro-credit {
+	position: absolute;
+	font-size: runner(13px);
+	bottom: em(13,18);
+	#{$left} : em(13,22);
+	z-index: 3;
+	background: rgba(#fff,.7);
+	border-radius: 5px;
+	padding: em(13,4) em(13,11) em(13,5);
+	color: #000;
+}
+
+@media (max-width: 1920px) and (min-width: $tablet) {
+	.template-home .m-intro {
+		font-size: #{strip($runner) / 1920 * 100}vw;
+	}
+}
+
+@media (max-width: $mobile){
+	.intro-title-table,
+	.m-intro-bg {
+		height: runnerMobile(464);
+	}
+	.intro-title {
+		font-size: runnerMobile(52.7);
+		max-width: em(52.7,310);
+		margin: 0 auto;
+	}
+	.intro-counters {
+		> .t-grid {
+			padding: 0;
+			overflow: hidden;
+		}
+	}
+	.icon-intro-bg {
+		display: none;
+	}
+	.intro-counters-list {
+		@include f-w();
+		margin: -1px;
+		&:before {
+			display: none;
+		}
+	}
+	.intro-counter-item {
+		width: 50%;
+		padding: runnerMobile(42) runnerMobile(23);
+		position: relative;
+		&:after , &:before {
+			content: "";
+			background-color: $c-bg;
+			position: absolute;
+			margin: auto;
+		}
+		&:after {
+			width: 1px;
+			height: calc( 100% - #{runnerMobile(50)});
+			top: 0;
+			bottom: 0;
+			#{$left}: 0;
+		}
+		&:before {
+			height: 1px;
+			width: calc( 100% - #{runnerMobile(50)});
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+	.intro-counter-top {
+		font-size: runnerMobile(22);
+	}
+	.intro-counter-value {
+		font-size: runnerMobile(55);
+	}
+	.intro-counter-desc {
+		font-size: runnerMobile(31);
+	}
+	.intro-credit {
+		font-size: runnerMobile(20);
+		bottom: em(20,16);
+		#{$left} : em(20,10);
+		padding: em(20,4) em(20,11) em(20,5);
+
+	}	
+}

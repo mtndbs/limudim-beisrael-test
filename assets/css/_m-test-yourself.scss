@@ -1,0 +1,116 @@
+
+.test-yourself-item-in {
+	border: 1px solid $c-bor;
+	overflow: hidden;
+	border-radius: runner($rad);
+	background: #fff;
+	@extend %t-shadow-small;
+}
+.test-yourself-title {
+	background-color: $c-bg;
+	padding: runner(8);
+}
+.test-yourself-option {
+	margin: 0 runner(8);
+}
+.test-yourself-radiosSet {
+	padding: runner(18) runner(10) runner(14);
+}
+.test-yourself-radio {
+	&:focus {
+		~ .test-yourself-radio-mock {
+			@extend %t-shadow-small;
+			background-color: rgba($c-bor,0.7);
+		}
+	}
+	&:checked {
+		+ .test-yourself-option-title {
+			color: $c1;
+		}
+		~ .test-yourself-radio-mock {
+			background-color: $c1;
+			svg {
+				display: block;
+			}
+		}
+	}
+
+}
+body.tab_navigation .test-yourself-radio:focus {
+	outline: none !important;
+}
+.test-yourself-radio-mock {
+	@include width(runner(26));
+	height: runner(26);
+	background-color: $c-bg;
+	border-radius: 50%;
+	position: relative;
+	cursor: pointer;
+	margin-top: runner(4);
+	svg {
+		@extend %l-abs-center;
+		width: runner(16);
+		display: none;
+	}
+}
+.test-yourself-submit {
+	@include width(runner(155));
+}
+
+@media (max-width: $mobile){
+	.m-test-yourself {
+		.t-part-title {
+			text-align: inherit;
+		}
+	}
+	.test-yourself-list {
+		margin: 0;
+		> .box {
+			padding: 0;
+			width: 100%;
+		}
+	}
+	.test-yourself-item-in {
+		border: none;
+		box-shadow: none;
+	}
+	.test-yourself-title {
+		font-size: runnerMobile(30);
+		padding-top: .35em;
+		padding-bottom: .35em;
+	}
+	.test-yourself-radiosSet-table {
+		@include f-jb();
+		margin-bottom: runnerMobile(5);
+	}
+	.test-yourself-radiosSet {
+		padding-top: .4em;
+		padding-bottom: .4em;
+	}
+	.test-yourself-option {
+		@include l-flex();
+		@include f-c();
+	}
+	.test-yourself-option-title {
+		font-size: runnerMobile(35);
+		@include order(509);
+	}
+	.test-yourself-radio-mock {
+		@include width(runnerMobile(40));
+		height: runnerMobile(40);
+		margin: 0;
+		margin-#{$left}: runnerMobile(12);
+	}
+	.test-yourself-explain {
+		font-size: runnerMobile(26);
+	}
+	.test-yourself-form-bottom {
+		display: block;
+		.t-space {
+			display: none;
+		}
+	}
+	.test-yourself-submit {
+		margin-top: runnerMobile(20);
+	}
+}

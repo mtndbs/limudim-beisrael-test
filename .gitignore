@@ -1,0 +1,6 @@
+.idea
+node_modules
+*.zip
+mix-manifest.json
+.vscode
+tailwind-dev/node_modules

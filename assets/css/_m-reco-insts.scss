@@ -1,0 +1,23 @@
+.reco-insts-frame {
+	@extend %l-frame;
+	border-#{$left} : 1px solid $c-bor;
+	padding-top: runner(90);
+	img {
+		max-width: 90%;
+		max-height: 100%;
+	}
+}
+
+@media (max-width: $mobile){
+	.m-reco-insts.has-slider {
+		&:before , &:after {
+			width: runnerMobie(100);
+		}
+		&:before {
+			background: linear-gradient(to $right, rgba(#fff,0) 0%, #fff 100%);
+		}
+		&:after {
+			background: linear-gradient(to $left, rgba(#fff,0) 0%, #fff 100%);
+		}
+	}
+}

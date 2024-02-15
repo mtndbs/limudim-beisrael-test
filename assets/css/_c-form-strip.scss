@@ -1,0 +1,98 @@
+
+.above-form-strip {
+	padding: runner(5) 0;
+}
+.icon-g-arr {
+	background-image: url(#{$icons-path}g-arr.svg);
+	position: relative;
+	background-size: 100%;
+	top: runner(22);
+	margin: runner(-5) 0;
+	margin-#{$right}: runner(11);
+}
+.form-strip {
+	background: $c2;
+	color: #fff;
+	padding: runner(40);
+}
+	.form-strip-cell {
+		width: runner(213 + $pad/4);
+		.t-field {
+			height: 100%;
+		}
+	}
+.form-strip-text {
+	max-width: runner(230);
+	white-space: nowrap;
+	margin-#{$left}: runner(19);
+}
+	.form-strip-title {
+		font-size: runner(30);
+		line-height: .9;
+	}
+	.form-strip-desc {
+		font-size: runner(20);
+	}
+
+.form-strip-checkbox {
+	position: absolute;
+	top: 100%;
+	#{$left}: runner(5);
+	white-space: nowrap;
+}
+@media (max-width: $tablet){
+	.form-strip {
+		font-size: .85em;
+	}
+}
+
+@media (max-width: $mobile){
+	.above-form-text {
+		font-size: runnerMobile(32);
+	}
+	/*
+	.icon-g-arr {
+		background-size: 136%;
+		margin-right: -1.22em;
+	}
+	*/
+	.form-strip, 
+	.form-strip-form {
+		display: block;
+	}
+	.form-strip {
+		padding: runnerMobile(40) runnerMobile($grid-pad-mobile) runnerMobile(40);
+		.t-boxes-small {
+			margin: 0;
+		}
+		.submit-hold {
+			display: table;
+		}
+	}
+	.form-strip-text {
+		text-align: center;
+		max-width: none;
+		margin: 0 0 runnerMobile($pad/2);
+	}
+	.form-strip-title {
+		font-size: runnerMobile(49);
+	}
+	.form-strip-desc {
+		font-size: runnerMobile(32);
+	}
+	.form-strip-cell {
+		width: 100%;
+		padding: 0 0 runnerMobile(14);
+		.t-field {
+			width: 100%;
+			font-size: runnerMobile(28);
+			height: em(28,80);
+		}		
+	}
+	.form-strip-checkbox {
+		width: 100%;
+		text-align: center;
+		display: block;
+		#{$left}: runner(0);
+	}
+}

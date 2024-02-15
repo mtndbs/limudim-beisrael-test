@@ -1,0 +1,45 @@
+.icon-heart {
+	width: runnerMobile(120);
+	height: runnerMobile(120);
+	background: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: runnerMobile(-60);
+	right: 0;
+	left: 0;
+	margin: auto;
+	svg {
+		width: runnerMobile(50);
+		height: runnerMobile(43);
+		@extend %l-abs-center;
+	}
+}
+.free_service-top {
+	margin-bottom: runnerMobile(30);
+}
+.icon-arr-hold {
+	width: 0;
+	height: 0;
+	position: relative;
+	display: inline-block;
+	vertical-align: bottom;
+	.icon-g-arr {
+		position: static;
+		width: runnerMobile(70);
+		height: runnerMobile(72);
+		background-size: 100%;
+		margin-#{$right}: -.3em;
+	}
+}
+
+.free_service-form {
+	@extend %t-shadow;
+	border: 1px solid $c-bor-gold;
+	background: $c-bg-yellow ;
+	padding: runnerMobile(24) runnerMobile(24) runnerMobile(70);
+	border-radius: runnerMobile(10);
+	.form-strip-checkbox {
+		#{$left}: 0;
+		#{$right}: 0;
+	}
+}
